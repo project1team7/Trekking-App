@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 function findTrailBtn() {
@@ -64,3 +65,9 @@ if (navigator.geolocation) {
       document.getElementById('temp').innerHTML = celcius + '&deg;';
       document.getElementById('location').innerHTML = d.name;
    }
+=======
+function findTrailBtn() {
+    var getFindTrailBtnElement = document.querySelector('.find-trail-btn');
+    var getFindTrailBtnElement = getFindTrailBtnElement.textContent = "clicked";
+}
+>>>>>>> develop
