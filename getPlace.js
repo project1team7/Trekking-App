@@ -23,6 +23,17 @@ function initAutocomplete() {
 
   let markers = [];
 
+
+  if (navigator.geolocation) {
+    $('#find-trails').on('click', () => {
+        navigator.geolocation.getCurrentPosition(function(position){
+            console.log(position);
+        });
+    });
+  }
+  else {
+      console.log('Geolocation is not supported.')
+  }
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
   searchBox.addListener("places_changed", () => {
