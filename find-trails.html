@@ -11,7 +11,7 @@
     <header>
     </header>
     <main>
-        <div class="container flex flex-col mx-auto items-center h-screen justify-center">
+        <div class="container flex flex-row mx-auto items-center h-screen justify-around">
          
             <div class="flex justify-center">
                 <div class="block rounded-lg shadow-lg bg-white max-w-sm text-center">
@@ -33,6 +33,7 @@
                             </p>
                         </div>
                         <input
+                        id="chosen-location-address"
                         type="text"
                         class="
                             form-control
@@ -85,22 +86,26 @@
                     </div>
                 </div>    
             </div>
+            <!-- End of Find Trails component-->
+
+            <div id="trail-list" class="flex flex-col">
+                <a id="trail-item" href="#" class="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Course Name Placeholder</h5>
+                    <p class="font-normal text-gray-700 dark:text-gray-400">This is the address/location placeholder.</p>
+                </a>
+            </div>
+    
         </div> 
     </main>
     <footer>
     </footer>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBms50hG4fUuaVtpHAf4moqjddWuBv-LTY&libraries=places&callback=initMap">
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        if (navigator.geolocation) {
-            $('#find-trails').on('click', () => {
-                navigator.geolocation.getCurrentPosition(function(position){
-                    console.log(position);
-                });
-            });
-        }
-        else {
-            console.log('Geolocation is not supported.')
-        }
+        
     </script>
+    <script src="./searchLocation.js"></script>
 </body>
 </html>
