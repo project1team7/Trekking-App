@@ -185,18 +185,6 @@ footer img {
     /* margin-top: rem; */
 }
 
-<<<<<<< HEAD
-/* Weather Section */
-
-.find-weather label {
-    margin-bottom: 2rem;
-    text-align: center;
-    font-size: 2rem;
-}
-
-
-=======
->>>>>>> develop
 footer nav ul {
     display: flex;
     justify-content: flex-end;
