@@ -1,4 +1,4 @@
-var findTrailsbutton = $('#find-button');
+var button = $('#find-button');
 
 $(document).ready(function(){
     if (navigator.geolocation) {
@@ -11,7 +11,7 @@ $(document).ready(function(){
               document.getElementById('startLat').innerHTML = startPos.coords.latitude;
               document.getElementById('startLon').innerHTML = startPos.coords.longitude;
             };
-            findTrailsbutton.on('click', () => {
+            button.on('click', () => {
                 navigator.geolocation.getCurrentPosition(geoSuccess);
             })
         };    
@@ -22,7 +22,7 @@ $(document).ready(function(){
 });
 
 var handleSearch = function() {
-    findTrailsbutton.on('click', () => {
+    button.on('click', () => {
         var startPos;
         var nudge = document.getElementById('nudge');
       
