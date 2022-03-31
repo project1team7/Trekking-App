@@ -1,3 +1,10 @@
+<<<<<<< Updated upstream
+=======
+function findTrailBtn() {
+    var getFindTrailBtnElement = document.querySelector('.find-trail-btn');
+    var getFindTrailBtnElement = getFindTrailBtnElement.textContent = "clicked";
+}
+>>>>>>> Stashed changes
 
 //geolocation API 
 if (navigator.geolocation) {
