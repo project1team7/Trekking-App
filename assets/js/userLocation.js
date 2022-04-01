@@ -1,6 +1,6 @@
-var button = $('#find-button');
+var button = document.getElementById('#find-button');
 
-$(document).ready(function(){
+$(()=>{
     if (navigator.geolocation) {
         console.log('Geolocation permissions have been enabled.')
         
