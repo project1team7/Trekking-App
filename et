@@ -1,0 +1,30 @@
+[33mcommit a16f00417f53a0ef871ad263f97b9d6d8e1b375b[m[33m ([m[1;36mHEAD -> [m[1;32mbellcontactus[m[33m, [m[1;32mmain[m[33m)[m
+Author: TiggerTiff <tiffanybell031@gmail.com>
+Date:   Wed Mar 30 20:36:32 2022 -0400
+
+    first commit boilerplate
+
+[33mcommit 44d4e3b4cfb075f49805d97957a79a643eb7b4ce[m
+Merge: 6c67078 208cbe8
+Author: Lucas Pittam <98059989+lucaspittam@users.noreply.github.com>
+Date:   Wed Mar 30 19:24:00 2022 -0400
+
+    Merge branch 'main' of https://github.com/project1team7/Trekking-App
+
+[33mcommit 6c67078ba9944ae7487912228e5b8f6e6d298a08[m
+Author: Lucas Pittam <98059989+lucaspittam@users.noreply.github.com>
+Date:   Wed Mar 30 19:23:57 2022 -0400
+
+    Preliminary File Structure
+
+[33mcommit 208cbe81eb3c93472a1210bb5883a060cd2c0f3a[m
+Author: Matthew Pryor <63568157+Pryority@users.noreply.github.com>
+Date:   Wed Mar 30 19:19:48 2022 -0400
+
+    Update README.md
+
+[33mcommit 66e43bff37fb3af0999da4839f7b8f90ca1b867e[m
+Author: project1team7 <102487078+project1team7@users.noreply.github.com>
+Date:   Sun Mar 27 16:33:26 2022 -0400
+
+    Initial commit
