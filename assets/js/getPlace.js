@@ -6,12 +6,12 @@
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
 // Create the search box and link it to the UI element.
-const placeInput = document.getElementById("place-input");
-const findTrailsCard = document.getElementById("find-trails-card");
-const searchBox = new google.maps.places.SearchBox(placeInput);
+
 
 function initAutocomplete() {
-
+  const placeInput = document.getElementById("place-input");
+  const findTrailsCard = document.getElementById("find-trails-card");
+  const searchBox = new google.maps.places.SearchBox(placeInput);
   const map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: -33.8688, lng: 151.2195 },
     zoom: 13,
