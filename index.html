@@ -59,8 +59,10 @@
         </div>
     </nav>
 
+    <div id="map"></div>
+
     <main>
-        <div id="map-content-container" class="container flex flex-row mx-auto items-center h-screen justify-around">
+        <div id="container" class="container flex flex-row mx-auto items-center h-screen justify-around">
             <div class="flex justify-center">
                 <div id="find-trails-card" class="block rounded-lg shadow-lg bg-white max-w-sm text-center">        
                     <div class="p-8">        
@@ -131,17 +133,11 @@
                         </div>
                         <button id="find-button" type="button" class="inline-block px-6 py-2.5 mt-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Find Trails</button>
                     </div>
-                </div>    
+                    
+                </div>
+                <ul id="trail-list"></ul>    
+                
             </div>
-            <ul id="trail-list">
-                    <a id="trail-list-item" href="#" class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                        <img id="trail-image" class="object-cover w-full rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="/docs/images/blog/image-4.jpg" alt="">
-                        <div class="flex flex-col justify-between p-4 leading-normal">
-                            <h5 id="trail-name" class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-                            <p id="trail-address" class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                        </div>
-                    </a>            
-            </ul>
         </div>
     </main>
     
@@ -165,25 +161,12 @@
         </ul>
     </footer>
 
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBms50hG4fUuaVtpHAf4moqjddWuBv-LTY&libraries=places"
-      async
-    ></script> 
-   
-    <script src="./assets/js/find_place.js"></script>
-    <!-- <script src="./assets/js/map.js"></script> -->
     <script src="./assets/js/weather.js"></script>
-    <!-- <script src="./assets/js/findTrail.js>"></script> -->
-    <!-- <script src="./assets/js/getPlace.js"></script>
-    <script src="./assets/js/userLocation.js"></script> -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBms50hG4fUuaVtpHAf4moqjddWuBv-LTY&callback=initMap&libraries=places"
+      async
+    ></script>
+    <script src="./assets/js/place_service.js"></script>
 </body>
 </html>
 
-<!-- 5-Stars -->
-<!-- <div class="row p-2">
-    <span class="material-icons md-18">star</span>
-    <span class="material-icons md-18">star</span>
-    <span class="material-icons md-18">star</span>
-    <span class="material-icons md-18">star</span>
-    <span class="material-icons md-18">star</span>
-</div> -->
