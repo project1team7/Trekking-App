@@ -11,7 +11,7 @@ function initMap() {
     let searchQuery = document.getElementById('location-input').value;
     console.log(searchQuery);
     if (searchQuery === null || searchQuery === "") {
-        searchQuery = 'restaurants';
+        searchQuery = 'trails';
     };
     console.log(searchQuery);
     infowindow = new google.maps.InfoWindow();
