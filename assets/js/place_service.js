@@ -48,7 +48,7 @@ function initMap() {
 
                 // create a h5 element to hold trail name
                 var trailItemNameEl = document.createElement("h5");
-                trailItemNameEl.classList = "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white";
+                trailItemNameEl.classList = "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-left";
                 trailItemNameEl.setAttribute('id', "trail-name");
                 trailItemNameEl.textContent = trailName;
                 console.log(trailItemNameEl);
