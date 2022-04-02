@@ -142,39 +142,47 @@
     </main>
 
     <!-- Weather section -->
-    <section class="container mt-10 mb-20 shadow-lg rounded-lg bg-emerald-50 mx-auto flex justify-center items-center p-4">
-        <div class="block rounded-lg shadow-lg bg-white text-center 2xl:w-96">
-            <div class='flex justify-center items-center'>
-                <h2 class="text-gray-900 text-xl font-medium mb-2">Weather Forecast:</h2>
-                <!-- <div class="flex justify-center"> -->
-                <div id="weather" class="flex flex-col ml-4 p-4 leading-relaxed">
-                    <div id="description"></div>
-                        <h1 id="temp"></h1>
-                    <div id="location"></div>
+    <section class="container mt-10 mb-20 rounded-lg bg-emerald-50 mx-auto">
+        <div id="closest-trail-card" class="block rounded-lg shadow-lg bg-emerald-50 text-center">
+            <div class="p-8">
+                <div class='flex justify-center items-center'>
+                    <h2 class="text-gray-900 text-xl font-medium mb-2">Weather Forecast:</h2>
+                    <div class="flex justify-center">
+                        <div id="weather" class="flex flex-col">
+                        <div id="description"></div>
+                            <h1 id="temp"></h1>
+                        <div id="location"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
-        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://flowbite.com"
-                class="hover:underline">Flowbite™</a>. All Rights Reserved.
-        </span>
-        <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+        </section>
+
+    <!-- footer section -->
+    <footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-emerald-700">
+        <!-- px-2 py-2.5 bg-white border-gray-200 dark:bg-emerald-700 dark:border-gray-700 -->
+        <span class="text-sm text-white sm:text-center dark:text-white">© 2022 <a href="https://project1team7.github.io/Trekking-App/" class="hover:underline">Trekking App</a>. All Rights Reserved.</span>
+        <ul class="flex flex-wrap items-center mt-3 text-sm text-white dark:text-white sm:mt-0">
             <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+                <a href="./assets/html/about.html" class="mr-4 hover:underline md:mr-6 ">About</a>
             </li>
             <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                <a href="./assets/html/findTrail.html" class="mr-4 hover:underline md:mr-6">Find Trail</a>
             </li>
             <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
-            </li>
-            <li>
-                <a href="#" class="hover:underline">Contact</a>
+                <a href="./assets/html/contact.html" class="hover:underline">Contact</a>
             </li>
         </ul>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <!-- <script src="./assets/js/findTrail.js>"></script> -->
+    <script src="./assets/js/getPlace.js"></script>
+    <!-- <script src="./assets/js/userLocation.js"></script>  -->
+    <script src="./assets/js/weather.js"></script>
 
     <script src="./assets/js/weather.js"></script>
     <script
