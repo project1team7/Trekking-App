@@ -5,7 +5,7 @@ var button = $('#find-button');
 
 $(document).ready(function(){
   button.on('click', () => {
-    // navigator.geolocation.getCurrentPosition(geoSuccess);
+    navigator.geolocation.getCurrentPosition(geoSuccess);
     // for (var i = 0; i < 5; i++) {
     //  createTrailListItem();
     //   console.log(trailList);
@@ -13,21 +13,21 @@ $(document).ready(function(){
     console.log('creating list item');
     createTrailListItem();
   });
-  // if (navigator.geolocation) {
-  //     console.log('Geolocation permissions have been enabled.')
+  if (navigator.geolocation) {
+      console.log('Geolocation permissions have been enabled.')
       
-  //     window.onload = function () {
-  //       var startPos;
-  //       var geoSuccess = function (position) {
-  //         startPos = position;
-  //         document.getElementById('startLat').innerHTML = startPos.coords.latitude;
-  //         document.getElementById('startLon').innerHTML = startPos.coords.longitude;
-  //       };            
-  //     };    
-  // }
-  // else {
-  //     console.log('Geolocation is not supported.')
-  // }
+      window.onload = function () {
+        var startPos;
+        var geoSuccess = function (position) {
+          startPos = position;
+          document.getElementById('startLat').innerHTML = startPos.coords.latitude;
+          document.getElementById('startLon').innerHTML = startPos.coords.longitude;
+        };            
+      };    
+  }
+  else {
+      console.log('Geolocation is not supported.')
+  }
 });
 
 var createTrailListItem = () => {
