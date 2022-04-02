@@ -1,6 +1,7 @@
 //geolocation API 
+// debugger;
 if (navigator.geolocation) {
-    // navigator.geolocation.getCurrentPosition(getPosSuccess, getPosErr);
+    navigator.geolocation.getCurrentPosition(getPosSuccess, getPosErr);
 } else {
     alert('geolocation not available?');
 }
