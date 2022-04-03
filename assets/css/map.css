@@ -13,10 +13,6 @@ body {
   /* overflow: hidden; Hide scrollbars */
 }
 
-#find-trails-card {
-  margin-left: 64px;
-}
-
 #description {
   font-family: Roboto;
   font-size: 15px;

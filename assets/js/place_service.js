@@ -69,6 +69,7 @@ function initMap() {
 
                 // append container to the dom
                 let trailList = document.getElementById('trail-list');
+
                 trailList.appendChild(trailContainerEl);
 
                 // trailList.appendChild(resultsItemEl);
