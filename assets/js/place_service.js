@@ -39,23 +39,23 @@ function initMap() {
 
                 // create a container (in the form a link) for each trail list item
                 var trailContainerEl = document.createElement("a");
-                trailContainerEl.classList = "flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700";
+                trailContainerEl.classList = "flex flex-col w-full items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700";
                 trailContainerEl.setAttribute('id', "trail-list-item");
                 trailContainerEl.setAttribute("href", "#")
 
                 // create container to stack trail name, address and other elements
                 var trailItemDivEl = document.createElement('div');
-                trailItemDivEl.classList = 'flex flex-col justify-between p-4 leading-normal';
+                trailItemDivEl.classList = 'flex flex-col justify-between p-2 leading-normal';
 
                 // create a h5 element to hold trail name
                 var trailItemNameEl = document.createElement("h5");
-                trailItemNameEl.classList = "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-left";
+                trailItemNameEl.classList = "mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white text-left";
                 trailItemNameEl.setAttribute('id', "trail-name");
                 trailItemNameEl.textContent = trailName;
 
                 // create a p element to hold trail location
                 var trailItemLocationEl = document.createElement("p");
-                trailItemLocationEl.classList = "mb-3 font-normal text-gray-700 dark:text-gray-400";
+                trailItemLocationEl.classList = "mb-3 text-xs w-2/3 text-left font-normal text-gray-700 dark:text-gray-400";
                 trailItemLocationEl.setAttribute('id', "trail-address");
                 trailItemLocationEl.textContent = trailLocation;
 
