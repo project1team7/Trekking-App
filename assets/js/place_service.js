@@ -45,7 +45,7 @@ function initMap() {
 
                 // create container to stack trail name, address and other elements
                 var trailItemDivEl = document.createElement('div');
-                trailItemDivEl.classList = 'flex flex-col justify-between p-2 leading-normal';
+                trailItemDivEl.classList = 'flex flex-col justify-between p-1 leading-normal';
 
                 // create a h5 element to hold trail name
                 var trailItemNameEl = document.createElement("h5");
