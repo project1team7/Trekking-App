@@ -26,13 +26,13 @@ function initMap() {
     };
 
     service = new google.maps.places.PlacesService(map);
-    service.findPlaceFromQuery(request, (results, status) => {
+    service.textSearch(request, (results, status) => {
         console.log(results)
+        // map.center(results[0]);
         if (status === google.maps.places.PlacesServiceStatus.OK && results) {
             for (let i = 0; i < results.length; i++) {
                 // createMarker(results[i]);
                 // create unordered list group
-
                 var trailName = results[i].name;
                 var trailLocation = results[i].formatted_address;
 
@@ -73,23 +73,22 @@ function initMap() {
                 trailList.appendChild(trailContainerEl);
 
                 // trailList.appendChild(resultsItemEl);
+                function createMarker(place) {
+                    if (!place.geometry || !place.geometry.location) return;
 
+                    const marker = new google.maps.Marker({
+                        map,
+                        position: place.geometry.location,
+                    });
+
+                    google.maps.event.addListener(marker, "click", () => {
+                        infowindow.setContent(place.name || "");
+                        infowindow.open(map);
+                    });
+                }
             }
             map.setCenter(sydney);
         }
     });
 }
 // TODO: add marker at each trail locaiton
-// function createMarker(place) {
-//     if (!place.geometry || !place.geometry.location) return;
-
-//     const marker = new google.maps.Marker({
-//         map,
-//         position: place.geometry.location,
-//     });
-
-//     google.maps.event.addListener(marker, "click", () => {
-//         infowindow.setContent(place.name || "");
-//         infowindow.open(map);
-//     });
-// }
