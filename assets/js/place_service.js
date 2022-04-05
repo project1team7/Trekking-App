@@ -39,7 +39,7 @@ function initMap() {
 
                 // create a container (in the form a link) for each trail list item
                 var trailContainerEl = document.createElement("a");
-                trailContainerEl.classList = "flex flex-col w-full items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700";
+                trailContainerEl.classList = "flex flex-col w-full items-center bg-white mt-1 p-2 rounded-lg border border-slates-200 shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700";
                 trailContainerEl.setAttribute('id', "trail-list-item");
                 trailContainerEl.setAttribute("href", "#")
 
@@ -55,7 +55,7 @@ function initMap() {
 
                 // create a p element to hold trail location
                 var trailItemLocationEl = document.createElement("p");
-                trailItemLocationEl.classList = "mb-3 text-xs w-2/3 text-left font-normal text-gray-700 dark:text-gray-400";
+                trailItemLocationEl.classList = "text-xs w-2/3 text-left font-normal text-gray-700 dark:text-gray-400";
                 trailItemLocationEl.setAttribute('id', "trail-address");
                 trailItemLocationEl.textContent = trailLocation;
 
