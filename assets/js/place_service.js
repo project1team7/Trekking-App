@@ -7,30 +7,31 @@ let infowindow;
 
 function initMap() {
     // make these coords update dynamically
-    const sydney = new google.maps.LatLng(-33.867, 151.195);
+    const initLocation = new google.maps.LatLng(-33.867, 151.195);
     let searchQuery = document.getElementById('location-input').value;
-    console.log(searchQuery);
     if (searchQuery === null || searchQuery === "") {
         searchQuery = 'trails';
     };
-    console.log(searchQuery);
     infowindow = new google.maps.InfoWindow();
     map = new google.maps.Map(document.getElementById("map"), {
-        center: sydney,
+        center: initLocation,
         zoom: 15,
     });
 
     const request = {
         query: searchQuery,
-        fields: ['ALL'],
+        fields: ['name', 'location'],
     };
 
     service = new google.maps.places.PlacesService(map);
     service.textSearch(request, (results, status) => {
-        console.log(results)
-        // map.center(results[0]);
+        console.log("Here are the first 20 trails:", results)
         if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+            console.log('Centering map at first trail:', results[0].formatted_address);
+
             for (let i = 0; i < results.length; i++) {
+                // map.setCenter(results[0].location);
+
                 // createMarker(results[i]);
                 // create unordered list group
                 var trailName = results[i].name;
@@ -51,7 +52,6 @@ function initMap() {
                 trailItemNameEl.classList = "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-left";
                 trailItemNameEl.setAttribute('id', "trail-name");
                 trailItemNameEl.textContent = trailName;
-                console.log(trailItemNameEl);
 
                 // create a p element to hold trail location
                 var trailItemLocationEl = document.createElement("p");
@@ -87,7 +87,7 @@ function initMap() {
                     });
                 }
             }
-            map.setCenter(sydney);
+            map.setCenter(initLocation);
         }
     });
 }
