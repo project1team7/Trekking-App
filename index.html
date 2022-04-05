@@ -131,7 +131,7 @@
                    <!-- Closest trails card -->
                    <div id="closest-trail-card">
                        <div class="p-8">
-                           <div class='flex justify-center items-center'>
+                           <div class="flex flex-row justify-between items-center">
                                <h2 class="text-gray-900 text-xl font-medium mb-2">Closest Trails</h2>
                                <img src="./assets/images/Trekking-Shoes.svg" class="mr-3 h-10 ml-4">
                            </div>
@@ -141,18 +141,15 @@
                            <ul id="trail-list" class="flex flex-wrap text-sm font-medium text-gray-900 bg-white border border-green-500 rounded-lg dark:bg-emerald-50 dark:border-green-500 dark:text-gray-600">                               
                            </ul>                    
                        </div>
-                   </div>                   
+                   </div>                  
                 </div>
-
+                <div id="map" class="flex w-2/3 rounded"></div>
             </div>
         </section>
-    </main>
 
-    <!-- Weather section -->
-    <section class="p-4">
-        <div id="closest-trail-card" class="container flex justify-between rounded-lg bg-emerald-50 mx-auto  rounded-lg shadow-lg bg-emerald-50 text-center">
-            <div class="p-8">
-                <div class='flex justify-center items-center'>
+        <!-- Weather section -->
+        <section class="container flex flex-wrap justify-between items-center mx-auto bg-emerald-50">
+                <div class='flex flex-row items-center p-8'>
                     <h2 class="text-gray-900 text-xl font-medium mb-2">Weather Forecast:</h2>
                     <div class="flex justify-center">
                         <div id="weather" class="flex flex-col">
@@ -162,9 +159,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
         </section>
+    </main>
+
+    
 
     <!-- footer section -->
     <footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 bg-emerald-700">
