@@ -5,6 +5,9 @@ let map;
 let service;
 let infowindow;
 let searchQuery = document.getElementById('address').value;
+var apiKey = "2721e9284e13e8d9c9f8b97f5cb1de42";
+var lat = '';
+var lon = '';   
 
 function getAddress() {
     // get the User's input 
@@ -18,11 +21,62 @@ function getAddress() {
         console.log("concatenated search",searchQuery)
     }
     initMap(searchQuery);
+    getCityLocation(searchQuery);
 }
 
-function initMap() {
-    // make these coords update dynamically
-    const initLocation = new google.maps.LatLng(-33.867, 151.195);
+function getCityLocation(getCity) {
+    // gets users input, either via form or button from history
+    var getCityName = getCity.split("+");
+    getCityName = getCityName[0];
+    getCityName = getCityName.split(' ').join('+');
+    console.log("This is getCity", getCityName);
+
+    if (getCity) {
+        var apiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + getCityName + "&limit=5&appid=" + apiKey;
+        console.log("from fetch",apiUrl)
+        fetch(apiUrl)
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (data) {
+                        getCityGeoLocation(data);
+                    });
+                }
+            })
+        }
+}
+
+function getCityGeoLocation(data) {
+    // get city location
+    console.log("This is", data)
+    var lat = data[0].lat;
+    var lon = data[0].lon;
+
+    // var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly,alerts&units=metric&appid=" + apiKey;
+    // console.log(apiUrl);
+    initMap(lat,lon);
+}
+
+function initMapLocation() {
+    const initLocation = new google.maps.LatLng(43.6426, -79.3871);
+    infowindow = new google.maps.InfoWindow();
+    map = new google.maps.Map(document.getElementById("map"), {
+        center: initLocation,
+        zoom: 15,
+    });
+
+}
+
+function initMap(lat,lon) {
+    // if (lat && lon === null) {
+    //     latitude = 43.6426;
+    //     longitude = -79.3871;
+    // } else {
+    //     latitude = lat;
+    //     longitude = lon;
+    // }
+
+    const initLocation = new google.maps.LatLng(lat, lon);
+    // initLocation = new google.maps.LatLng(lat,lon);
 
     infowindow = new google.maps.InfoWindow();
     map = new google.maps.Map(document.getElementById("map"), {
