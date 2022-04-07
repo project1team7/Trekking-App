@@ -2,8 +2,8 @@
        * element that contains the map. */
        #map {
         height: 100%;
-        border: 3.44px solid rgb(166, 197, 165);
-        box-shadow: 0px 5px 4px 4px rgb(209, 227, 209, 0.62);
+        /* border: 3.44px solid rgb(166, 197, 165); */
+        /* box-shadow: 0px 5px 4px 4px rgb(209, 227, 209, 0.62); */
       }
       
       /* Optional: Makes the sample page fill the window. */

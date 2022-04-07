@@ -8,7 +8,7 @@ let infowindow;
 function initMap() {
     // make these coords update dynamically
     const initLocation = new google.maps.LatLng(-33.867, 151.195);
-    let searchQuery = document.getElementById('location-input').value;
+    let searchQuery = document.getElementById('address').value;
     if (searchQuery === null || searchQuery === "") {
         searchQuery = 'trails';
     };
