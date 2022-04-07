@@ -8,8 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/1.3.2/css/weather-icons.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/map.css">
 </head>
@@ -81,17 +81,18 @@
     </main>
 
     <!-- Weather section -->
-    <section class="container flex flex-wrap justify-between items-center mx-auto bg-emerald-50">
-        <div class='flex flex-row items-center p-8'>
-            <h2 class="text-gray-900 text-xl font-medium mb-2">Weather Forecast:</h2>
-            <div class="flex justify-center">
-                <div id="weather" class="flex flex-col">
-                <div id="description"></div>
-                    <h1 id="temp"></h1>
-                <div id="location"></div>
+   
+    <section id="weather" class="container mt-10 shadow-lg bg-emerald-50 flex justify-between items-center mx-auto">
+        <h2 class="flex-row text-gray-900 text-xl font-medium mb-2">Weather Forecast</h2>
+
+            <div class="weatherBox">
+                <div class="weatherContent">
+                  <div class="weatherContentOverview"></div>
+                  <div class="weatherContentTemp"></div>
                 </div>
+                <div class="forecastBox"></div>
             </div>
-        </div>
+       
     </section>    
 
     <!-- footer section -->
