@@ -208,7 +208,7 @@ footer nav ul li {
 
 .weatherBox {
   margin: 30px auto;
-  width: 420px;
+  /* width: 420px;  */
   border: 1px solid #00ced1;
   border-radius: 10px;
   overflow: hidden;
