@@ -7,22 +7,30 @@ let infowindow;
 let searchQuery = document.getElementById('address').value;
 
 function getAddress() {
-    // get the User's input 
-    if (searchQuery === null || searchQuery === "") {
-        searchQuery = 'trails';
+    if (!searchQuery) {
+        searchQuery = 'trail11111';
     }
     if (searchQuery) {
         searchQuery = document.getElementById('address').value;
         trails = "+trails";
         searchQuery = searchQuery.concat(trails);
-        console.log("concatenated search",searchQuery)
+        console.log("not null", searchQuery)
+    } 
+    if (searchQuery === null || searchQuery === "") {
+        searchQuery = 'test3333';
     }
+
+
     initMap(searchQuery);
 }
+
+
+
 
 function initMap() {
     // make these coords update dynamically
     const initLocation = new google.maps.LatLng(-33.867, 151.195);
+    console.log("inside initmap", searchQuery);
 
     infowindow = new google.maps.InfoWindow();
     map = new google.maps.Map(document.getElementById("map"), {
@@ -34,8 +42,12 @@ function initMap() {
         query: searchQuery,
         fields: ['name', 'location'],
     };
-    console.log("Returning Request values", request)
+    console.log("This is the request", request)
+
+
     service = new google.maps.places.PlacesService(map);
+    console.log("not nul3l", request)
+
     service.textSearch(request, (results, status) => {
         console.log("Here are the first 20 trails:", results)
         if (status === google.maps.places.PlacesServiceStatus.OK && results) {
