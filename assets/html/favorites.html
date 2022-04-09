@@ -13,7 +13,7 @@
     <!-- <link rel="stylesheet" href="./assets/css/map.css"> -->
 </head>
 
-<body>
+<body onload="loadSavedTrailsToFavoritePage()">
     <!-- Navigation -->
     <nav class="px-2 py-2.5 bg-white rounded-b-lg border-gray-200 bg-emerald-700 border-gray-700">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
@@ -76,12 +76,7 @@
                     <p class="text-gray-700 text-base mb-4">
                         Find the your favorite trails!
                     </p>
-                    <ul class=" flex flex-wrap text-sm font-medium text-gray-900 bg-white border border-green-500 rounded-lg bg-emerald-50 border-green-500 text-gray-600">
-                        <li class="w-full px-4 py-2 border-b border-green-500 rounded-t-lg border-green-500">Trail 1</li>
-                        <li class="w-full px-4 py-2 border-b border-green-500 border-green-500">Trail 2</li>
-                        <li class="w-full px-4 py-2 border-b border-green-500 border-green-500">Trail 3</li>
-                        <li class="w-full px-4 py-2 rounded-b-lg">Trail 4</li>
-                    </ul>
+                    <ul id="favorite-trails" class="flex flex-wrap text-sm font-medium text-gray-900 bg-white border border-green-500 rounded-lg bg-emerald-50 border-green-500 text-gray-600"></ul>
                 </div>
             </div>
     </section>
@@ -108,11 +103,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="../js/script.js"></script>
     <!-- <script src="./assets/js/findTrail.js>"></script> -->
-    <script src="./assets/js/getPlace.js"></script>
+    <!-- <script src="./assets/js/getPlace.js"></script>
     <script src="./assets/js/userLocation.js"></script>
-    <script src="./assets/js/weather.js"></script>
+    <script src="./assets/js/weather.js"></script> -->
 
 
 </body>
