@@ -23,11 +23,6 @@ function saveFavoriteTrail() {
     var savedTrailsMap = savedTrails.map(findObject => findObject.name);
     var savedTrailsFiltered = savedTrails.filter(({ name }, index) => !savedTrailsMap.includes(name, index + 1));
     localStorage.setItem("trails", JSON.stringify(savedTrailsFiltered));
-
-        // for (var i = 0; i < savedTrails.length; i++) {
-        //     localStorage.setItem("trails", JSON.stringify(savedTrails[i]));
-        // }
-    // }
     
 }
 
