@@ -146,6 +146,9 @@ header nav ul li a {
   justify-content: center;
   width: 100%;
 }
+/* #favorite-trail-container {
+  width: 70%;
+} */
 
 .find-trail {
   display: flex;
