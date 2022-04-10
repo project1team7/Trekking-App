@@ -24,6 +24,21 @@ function saveFavoriteTrail() {
     var savedTrailsFiltered = savedTrails.filter(({ name }, index) => !savedTrailsMap.includes(name, index + 1));
     localStorage.setItem("trails", JSON.stringify(savedTrailsFiltered));
     
+    openSaveTrailModal(getTrailName);
+    
+}
+
+
+function openSaveTrailModal(getTrailName) {
+    var getName = getTrailName;
+    console.log("This is the name",getName)
+    modal.showModal();
+}
+
+function closeSaveTrailModal() {
+    // var getName = getTrailName;
+    // console.log("This is the name", getName)
+    modal.close();
 }
 
 function loadSavedTrailsToFavoritePage () {

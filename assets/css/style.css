@@ -331,3 +331,19 @@ footer nav ul li {
 small {
   font-size: 12px;
 }
+
+.modal  {
+  text-align: center;
+  padding: 1em;
+  width: 40%;
+  margin: 30rem;
+  border: green 2px solid;
+  background-color: #e5f6e8;
+  font-size: 1rem;
+  border-radius: 10px; 
+}
+
+.modal::backdrop {
+  background-color: #444;
+  opacity: .6;
+}
