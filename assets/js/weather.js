@@ -15,7 +15,6 @@ function getWeatherData(position) {
   }).then(data => data.json());
 }
 
-
 function applyIcon(icon) {
   let selectedIcon;
   switch (icon) {
@@ -70,7 +69,7 @@ renderData = (location, forecast) => {
   CURRENT_TEMP.innerHTML = `<i class="wi ${applyIcon(currentWeather.icon)}"></i> ${Math.round(forecast[0].temp.day)} <i class="wi wi-degrees"></i>`;
   CURRENT_LOCATION.innerHTML = widgetHeader;
 
-// get each daily forecast
+  // get each daily forecast
   forecast.forEach(day => {
     let date = new Date(day.dt * 1000);
     let days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'];
@@ -88,7 +87,7 @@ renderData = (location, forecast) => {
 // to be able to get the current browser location geolocation
 if ("geolocation" in navigator) {
   navigator.geolocation.getCurrentPosition((position) => {
-  	const coordinates = `lat=${position.coords.latitude}&lon=${position.coords.longitude}`;
+    const coordinates = `lat=${position.coords.latitude}&lon=${position.coords.longitude}`;
     // run/render the data
     getWeatherData(coordinates).then(weatherData => {
       const city = weatherData.city;
@@ -98,5 +97,5 @@ if ("geolocation" in navigator) {
     });
   }, e => console.log(e));
 } else {
-	console.log('unable to retrieve location from browser')
+  console.log('unable to retrieve location from browser')
 }
