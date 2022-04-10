@@ -51,8 +51,6 @@ function getCityGeoLocation(data) {
     var lat = data[0].lat;
     var lon = data[0].lon;
 
-    // var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly,alerts&units=metric&appid=" + apiKey;
-    // console.log(apiUrl);
     initMap(lat,lon);
 }
 
@@ -69,8 +67,6 @@ function initMapLocation() {
 function initMap(lat,lon) {
 
     const initLocation = new google.maps.LatLng(lat, lon);
-    // initLocation = new google.maps.LatLng(lat,lon);
-
     infowindow = new google.maps.InfoWindow();
     map = new google.maps.Map(document.getElementById("map"), {
         center: initLocation,
@@ -96,22 +92,12 @@ function initMap(lat,lon) {
                 var trailName = results[i].name;
                 var trailLocation = results[i].formatted_address;
 
-                // create a container (in the form a link) for each trail list item
-                // var trailContainerEl = document.createElement("a");
-                // trailContainerEl.classList = "flex flex-col w-full items-center bg-white mt-1 p-2 rounded-lg border border-slates-200 shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700";
-                // trailContainerEl.setAttribute('id', "trail-list-item");
-                // trailContainerEl.setAttribute("href", "#")
-                
-
                 // create container to stack trail name, address and other elements
                 var trailItemDivEl = document.createElement('div');
-                // trailItemDivEl.classList = 'flex flex-col justify-between p-1 leading-normal'; OLD
                 trailItemDivEl.classList = "trail-name-element w-full items-left bg-white mt-1 p-2 rounded-lg border border-slates-200 shadow-md md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700";
                 trailItemDivEl.setAttribute('id', "trail-name-element")
-                // trailItemDivEl.addEventListener("click", saveFavoriteTrail)
 
-
-                // create a h5 element to hold trail name
+                // create a button element to hold trail name
                 var trailItemNameEl = document.createElement("button");
                 trailItemNameEl.classList = "btn block mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white text-left";
                 trailItemNameEl.setAttribute("type", "button")
@@ -125,16 +111,12 @@ function initMap(lat,lon) {
                 trailItemLocationEl.classList = "text-xs w-2/3 text-left font-normal text-gray-700 dark:text-gray-400";
                 trailItemLocationEl.setAttribute('id', "trail-address-" + [i]);
                 trailItemLocationEl.textContent = trailLocation;
-                // trailItemNameEl.appendChild(trailItemLocationEl);
-
 
                 // add header and p element to div wrapper
                 trailItemDivEl.appendChild(trailItemNameEl);
                 trailItemDivEl.appendChild(trailItemLocationEl);
 
                 // append div to trail list item container
-                // trailContainerEl.appendChild(trailItemDivEl);
-                // results[i] = trailContainerEl; //OLD ONE
                 results[i] = trailItemDivEl;
 
                 // append container to the dom

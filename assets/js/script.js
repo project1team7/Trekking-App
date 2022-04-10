@@ -24,20 +24,15 @@ function saveFavoriteTrail() {
     var savedTrailsFiltered = savedTrails.filter(({ name }, index) => !savedTrailsMap.includes(name, index + 1));
     localStorage.setItem("trails", JSON.stringify(savedTrailsFiltered));
     
-    openSaveTrailModal(getTrailName);
-    
+    openSaveTrailModal();    
 }
 
 
-function openSaveTrailModal(getTrailName) {
-    var getName = getTrailName;
-    console.log("This is the name",getName)
+function openSaveTrailModal() {
     modal.showModal();
 }
 
 function closeSaveTrailModal() {
-    // var getName = getTrailName;
-    // console.log("This is the name", getName)
     modal.close();
 }
 
@@ -45,9 +40,6 @@ function loadSavedTrailsToFavoritePage () {
    
     var savedTrails = localStorage.getItem("trails");
     savedTrails = JSON.parse(savedTrails);
-    
-    // document.getElementById("#favorite-trails").innerHTML = "test";
-
 
     for (trails in savedTrails) {
         var getElement = document.getElementById("favorite-trails")
