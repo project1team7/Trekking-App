@@ -348,7 +348,7 @@ small {
   opacity: .6;
 }
 
-/* For desktop: */
+/* For desktop:
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
@@ -360,14 +360,19 @@ small {
 .col-9 {width: 75%;}
 .col-10 {width: 83.33%;}
 .col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
+.col-12 {width: 100%;} */
+
+#main {
+  display: flex;
+  flex-direction: row;
+}
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   [class*="col-"] {
     width: 100%;
   }
-  .main {
+  #main {
     flex-direction: column;
   }
 
