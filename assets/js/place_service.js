@@ -7,19 +7,23 @@ let infowindow;
 let searchQuery = document.getElementById('address').value;
 var apiKey = "2721e9284e13e8d9c9f8b97f5cb1de42";
 var lat = '';
-var lon = '';   
+var lon = '';
 
 function getAddress() {
-    // get the User's input 
-    if (searchQuery === null || searchQuery === "") {
-        searchQuery = 'trails';
+    if (!searchQuery) {
+        searchQuery = 'trail11111';
     }
     if (searchQuery) {
         searchQuery = document.getElementById('address').value;
         trails = "+trails";
         searchQuery = searchQuery.concat(trails);
-        console.log("concatenated search",searchQuery)
+        console.log("not null", searchQuery)
     }
+    if (searchQuery === null || searchQuery === "") {
+        searchQuery = 'test3333';
+    }
+
+
     initMap(searchQuery);
     getCityLocation(searchQuery);
 }
@@ -33,7 +37,7 @@ function getCityLocation(getCity) {
 
     if (getCity) {
         var apiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + getCityName + "&limit=5&appid=" + apiKey;
-        console.log("from fetch",apiUrl)
+        console.log("from fetch", apiUrl)
         fetch(apiUrl)
             .then(function (response) {
                 if (response.ok) {
@@ -42,7 +46,7 @@ function getCityLocation(getCity) {
                     });
                 }
             })
-        }
+    }
 }
 
 function getCityGeoLocation(data) {
@@ -51,7 +55,7 @@ function getCityGeoLocation(data) {
     var lat = data[0].lat;
     var lon = data[0].lon;
 
-    initMap(lat,lon);
+    initMap(lat, lon);
 }
 
 function initMapLocation() {
@@ -64,7 +68,7 @@ function initMapLocation() {
 
 }
 
-function initMap(lat,lon) {
+function initMap(lat, lon) {
 
     const initLocation = new google.maps.LatLng(lat, lon);
     infowindow = new google.maps.InfoWindow();
@@ -77,8 +81,12 @@ function initMap(lat,lon) {
         query: searchQuery,
         fields: ['name', 'location'],
     };
-    console.log("Returning Request values", request)
+    console.log("This is the request", request)
+
+
     service = new google.maps.places.PlacesService(map);
+    console.log("not nul3l", request)
+
     service.textSearch(request, (results, status) => {
         console.log("Here are the first 20 trails:", results)
         if (status === google.maps.places.PlacesServiceStatus.OK && results) {
@@ -104,7 +112,7 @@ function initMap(lat,lon) {
                 trailItemNameEl.setAttribute('id', "trail-name-" + [i])
                 trailItemNameEl.addEventListener("click", saveFavoriteTrail)
                 trailItemNameEl.textContent = trailName;
-                
+
 
                 // create a p element to hold trail location
                 var trailItemLocationEl = document.createElement("p");
