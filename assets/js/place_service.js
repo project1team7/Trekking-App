@@ -7,7 +7,7 @@ let infowindow;
 let searchQuery = document.getElementById('address').value;
 var apiKey = "2721e9284e13e8d9c9f8b97f5cb1de42";
 var lat = '';
-var lon = '';   
+var lon = '';
 
 function getAddress() {
     if (!searchQuery) {
@@ -18,7 +18,7 @@ function getAddress() {
         trails = "+trails";
         searchQuery = searchQuery.concat(trails);
         console.log("not null", searchQuery)
-    } 
+    }
     if (searchQuery === null || searchQuery === "") {
         searchQuery = 'test3333';
     }
@@ -28,26 +28,16 @@ function getAddress() {
     getCityLocation(searchQuery);
 }
 
-<<<<<<< HEAD
-
-
-
-function initMap() {
-    // make these coords update dynamically
-    const initLocation = new google.maps.LatLng(-33.867, 151.195);
-    console.log("inside initmap", searchQuery);
-=======
 function getCityLocation(getCity) {
     // gets users input, either via form or button from history
     var getCityName = getCity.split("+");
     getCityName = getCityName[0];
     getCityName = getCityName.split(' ').join('+');
     console.log("This is getCity", getCityName);
->>>>>>> e0a76d30d5575a7c6e56ffbce365c985852eaf31
 
     if (getCity) {
         var apiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + getCityName + "&limit=5&appid=" + apiKey;
-        console.log("from fetch",apiUrl)
+        console.log("from fetch", apiUrl)
         fetch(apiUrl)
             .then(function (response) {
                 if (response.ok) {
@@ -56,7 +46,7 @@ function getCityLocation(getCity) {
                     });
                 }
             })
-        }
+    }
 }
 
 function getCityGeoLocation(data) {
@@ -65,7 +55,7 @@ function getCityGeoLocation(data) {
     var lat = data[0].lat;
     var lon = data[0].lon;
 
-    initMap(lat,lon);
+    initMap(lat, lon);
 }
 
 function initMapLocation() {
@@ -78,7 +68,7 @@ function initMapLocation() {
 
 }
 
-function initMap(lat,lon) {
+function initMap(lat, lon) {
 
     const initLocation = new google.maps.LatLng(lat, lon);
     infowindow = new google.maps.InfoWindow();
@@ -122,7 +112,7 @@ function initMap(lat,lon) {
                 trailItemNameEl.setAttribute('id', "trail-name-" + [i])
                 trailItemNameEl.addEventListener("click", saveFavoriteTrail)
                 trailItemNameEl.textContent = trailName;
-                
+
 
                 // create a p element to hold trail location
                 var trailItemLocationEl = document.createElement("p");
